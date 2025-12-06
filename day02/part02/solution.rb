@@ -23,6 +23,8 @@ def invalid_id?(id)
     return true
   end
 
+  # Matching that a group of one or more numbers (\d+) is repeated at least once \1
+  #   and makes the full string (start ^ to end $)
   if id.to_s.match?(/^(\d+)\1+$/)
     puts "invalid: #{id} [regex]"
     return true
